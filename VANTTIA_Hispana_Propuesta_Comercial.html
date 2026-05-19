@@ -1,0 +1,1689 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VANTTIA · Propuesta Estratégica Hispana de Seguros</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0A1F44;
+  --navy-light:#1A3160;
+  --navy-deep:#050E22;
+  --green:#00FF88;
+  --green-dark:#00C46B;
+  --fuchsia:#FF3864;
+  --blue:#8F95D3;
+  --light:#F4F6FA;
+  --soft:#EDFAF3;
+  --amber:#B8860B;
+  --grey:#CCCCCC;
+  --text:#1A2138;
+  --text-soft:#5A6378;
+  --white:#FFFFFF;
+  --shadow:0 4px 20px rgba(10,31,68,0.08);
+  --shadow-lg:0 20px 60px rgba(10,31,68,0.15);
+  --radius:14px;
+  --radius-sm:8px;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  background:var(--light);
+  color:var(--text);
+  line-height:1.6;
+  font-size:16px;
+  overflow-x:hidden;
+}
+
+/* ============ COVER HERO ============ */
+.cover{
+  min-height:100vh;
+  background:linear-gradient(135deg,var(--navy-deep) 0%,var(--navy) 60%,var(--navy-light) 100%);
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:60px 24px;
+  position:relative;
+  overflow:hidden;
+}
+.cover::before{
+  content:'';
+  position:absolute;
+  top:-50%;
+  right:-20%;
+  width:80%;
+  height:200%;
+  background:radial-gradient(circle,rgba(0,255,136,0.08) 0%,transparent 60%);
+  pointer-events:none;
+}
+.cover::after{
+  content:'';
+  position:absolute;
+  bottom:-30%;
+  left:-10%;
+  width:60%;
+  height:120%;
+  background:radial-gradient(circle,rgba(255,56,100,0.06) 0%,transparent 60%);
+  pointer-events:none;
+}
+.cover-inner{
+  position:relative;
+  z-index:2;
+  text-align:center;
+  max-width:900px;
+}
+.cover-badge{
+  display:inline-block;
+  padding:8px 20px;
+  border:1px solid rgba(0,255,136,0.4);
+  border-radius:100px;
+  font-size:13px;
+  font-weight:600;
+  letter-spacing:0.15em;
+  color:var(--green);
+  margin-bottom:32px;
+  background:rgba(0,255,136,0.05);
+}
+.cover h1{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:clamp(64px,14vw,160px);
+  font-weight:800;
+  letter-spacing:-0.04em;
+  line-height:0.9;
+  background:linear-gradient(135deg,#fff 0%,var(--green) 100%);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+  margin-bottom:16px;
+}
+.cover-brand-wrap{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:16px;
+  margin-bottom:24px;
+}
+.cover-logo{
+  height:clamp(50px,9vw,90px);
+  width:auto;
+}
+.cover-brand-text{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:clamp(40px,8vw,80px);
+  font-weight:800;
+  letter-spacing:-0.03em;
+  line-height:1;
+  background:linear-gradient(135deg,#fff 0%,var(--green) 100%);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.nav-logo{
+  height:28px;
+  width:auto;
+  margin-right:4px;
+}
+.footer-brand-wrap{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  margin-bottom:20px;
+}
+.footer-logo{
+  height:32px;
+  width:auto;
+}
+.footer-brand-text{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:28px;
+  font-weight:800;
+  letter-spacing:-0.02em;
+  color:var(--white);
+  line-height:1;
+}
+.cover-tagline{
+  font-size:clamp(16px,3vw,22px);
+  font-weight:300;
+  font-style:italic;
+  opacity:0.85;
+  margin-bottom:48px;
+  color:#E5E9F5;
+}
+.cover-divider{
+  width:60px;
+  height:3px;
+  background:var(--green);
+  margin:0 auto 48px;
+  border-radius:3px;
+}
+.cover-title{
+  font-size:clamp(20px,4vw,32px);
+  font-weight:700;
+  letter-spacing:0.05em;
+  text-transform:uppercase;
+  margin-bottom:20px;
+}
+.cover-subtitle{
+  font-size:clamp(15px,2.5vw,20px);
+  font-weight:400;
+  opacity:0.8;
+  margin-bottom:40px;
+}
+.cover-version{
+  display:inline-block;
+  margin-top:32px;
+  padding:14px 32px;
+  background:var(--green);
+  color:var(--navy-deep);
+  font-weight:700;
+  border-radius:100px;
+  font-size:14px;
+  letter-spacing:0.1em;
+}
+.cover-scroll{
+  position:absolute;
+  bottom:40px;
+  left:50%;
+  transform:translateX(-50%);
+  color:rgba(255,255,255,0.5);
+  font-size:11px;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  animation:bounce 2s infinite;
+}
+@keyframes bounce{
+  0%,100%{transform:translateX(-50%) translateY(0)}
+  50%{transform:translateX(-50%) translateY(8px)}
+}
+
+/* ============ NAV ============ */
+.topnav{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(255,255,255,0.95);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(10,31,68,0.08);
+  padding:0;
+}
+.topnav-inner{
+  max-width:1400px;
+  margin:0 auto;
+  padding:14px 24px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+}
+.topnav-brand{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:22px;
+  font-weight:800;
+  letter-spacing:-0.02em;
+  color:var(--navy);
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.topnav-brand-dot{
+  width:8px;
+  height:8px;
+  background:var(--green);
+  border-radius:50%;
+  box-shadow:0 0 12px var(--green);
+}
+.topnav-meta{
+  font-size:12px;
+  color:var(--text-soft);
+  font-weight:500;
+  letter-spacing:0.05em;
+}
+.menu-toggle{
+  display:none;
+  background:var(--navy);
+  color:white;
+  border:none;
+  padding:10px 16px;
+  border-radius:8px;
+  font-weight:600;
+  font-size:13px;
+  cursor:pointer;
+  gap:8px;
+  align-items:center;
+}
+
+/* ============ LAYOUT ============ */
+.layout{
+  max-width:1400px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:280px 1fr;
+  gap:32px;
+  padding:32px 24px;
+}
+.sidebar{
+  position:sticky;
+  top:80px;
+  height:calc(100vh - 96px);
+  overflow-y:auto;
+  padding:24px 0;
+  scrollbar-width:thin;
+  scrollbar-color:var(--grey) transparent;
+}
+.sidebar::-webkit-scrollbar{width:6px}
+.sidebar::-webkit-scrollbar-thumb{background:var(--grey);border-radius:3px}
+
+.sidebar-title{
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:var(--text-soft);
+  margin-bottom:16px;
+  padding:0 8px;
+}
+.sidebar-section{margin-bottom:28px}
+.sidebar-link{
+  display:block;
+  padding:9px 12px;
+  font-size:13.5px;
+  color:var(--text);
+  text-decoration:none;
+  border-radius:8px;
+  transition:all 0.15s;
+  font-weight:500;
+  line-height:1.4;
+  border-left:3px solid transparent;
+}
+.sidebar-link:hover{
+  background:rgba(0,255,136,0.08);
+  color:var(--navy);
+}
+.sidebar-link.active{
+  background:var(--navy);
+  color:white;
+  border-left-color:var(--green);
+  font-weight:600;
+}
+.sidebar-link-num{
+  display:inline-block;
+  font-family:'Space Grotesk',sans-serif;
+  font-weight:700;
+  color:var(--green);
+  margin-right:8px;
+  font-size:12px;
+}
+.sidebar-link.active .sidebar-link-num{color:var(--green)}
+
+/* ============ MAIN CONTENT ============ */
+.content{
+  background:white;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:48px 56px;
+  min-width:0;
+}
+
+.section{
+  scroll-margin-top:80px;
+  margin-bottom:80px;
+}
+.section-num{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:14px;
+  font-weight:700;
+  letter-spacing:0.2em;
+  color:var(--green-dark);
+  text-transform:uppercase;
+  margin-bottom:12px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.section-num::before{
+  content:'';
+  width:36px;
+  height:2px;
+  background:var(--green);
+  display:inline-block;
+}
+.section h1{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:clamp(28px,4vw,42px);
+  font-weight:700;
+  color:var(--navy);
+  letter-spacing:-0.02em;
+  line-height:1.15;
+  margin-bottom:24px;
+  padding-bottom:20px;
+  border-bottom:2px solid var(--light);
+}
+.section h2{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:clamp(20px,2.6vw,26px);
+  font-weight:600;
+  color:var(--navy);
+  margin:40px 0 16px;
+  letter-spacing:-0.01em;
+}
+.section h3{
+  font-size:clamp(16px,2vw,18px);
+  font-weight:700;
+  color:var(--navy);
+  margin:24px 0 10px;
+}
+.section p{
+  margin-bottom:14px;
+  color:var(--text);
+  font-size:15.5px;
+}
+.section ul{
+  margin:14px 0 18px;
+  padding-left:0;
+  list-style:none;
+}
+.section ul li{
+  position:relative;
+  padding-left:24px;
+  margin-bottom:10px;
+  font-size:15px;
+  line-height:1.6;
+}
+.section ul li::before{
+  content:'';
+  position:absolute;
+  left:0;
+  top:10px;
+  width:8px;
+  height:8px;
+  background:var(--green);
+  border-radius:50%;
+}
+.section-sub{
+  font-size:15px;
+  color:var(--text-soft);
+  font-style:italic;
+  margin-top:-12px;
+  margin-bottom:28px;
+}
+strong{color:var(--navy);font-weight:700}
+.text-green{color:var(--green-dark);font-weight:700}
+.text-fuchsia{color:var(--fuchsia);font-weight:600}
+
+/* ============ CALLOUTS ============ */
+.callout{
+  background:linear-gradient(135deg,#F8FAFE 0%,#EEF3FB 100%);
+  border-left:4px solid var(--green);
+  padding:20px 24px;
+  margin:24px 0;
+  border-radius:var(--radius-sm);
+  font-style:italic;
+  font-weight:500;
+  color:var(--navy);
+  font-size:15.5px;
+}
+.callout-large{
+  background:linear-gradient(135deg,var(--navy) 0%,var(--navy-light) 100%);
+  color:white;
+  border-left:4px solid var(--green);
+  padding:32px 36px;
+  margin:32px 0;
+  border-radius:var(--radius);
+  font-size:18px;
+  line-height:1.55;
+  font-weight:400;
+}
+.callout-large em{color:var(--green);font-style:normal;font-weight:600}
+
+.disclaimer{
+  background:#FFF8E1;
+  border-left:4px solid var(--amber);
+  padding:18px 22px;
+  margin:24px 0;
+  border-radius:var(--radius-sm);
+  font-size:13.5px;
+  line-height:1.6;
+  color:#3A3008;
+  font-style:italic;
+}
+.disclaimer-label{
+  display:inline-block;
+  background:var(--amber);
+  color:white;
+  font-size:10.5px;
+  font-weight:800;
+  letter-spacing:0.12em;
+  padding:3px 10px;
+  border-radius:4px;
+  margin-right:10px;
+  vertical-align:middle;
+  text-transform:uppercase;
+  font-style:normal;
+}
+
+/* ============ KPI HERO ============ */
+.kpi-hero{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:16px;
+  margin:30px 0;
+}
+.kpi-box{
+  background:white;
+  border:1px solid #E5EAF2;
+  padding:24px 22px;
+  border-radius:var(--radius);
+  position:relative;
+  transition:transform 0.2s,box-shadow 0.2s;
+}
+.kpi-box:hover{
+  transform:translateY(-2px);
+  box-shadow:var(--shadow-lg);
+}
+.kpi-box-tag{
+  font-size:10.5px;
+  font-weight:700;
+  color:var(--green-dark);
+  letter-spacing:0.15em;
+  text-transform:uppercase;
+  margin-bottom:10px;
+}
+.kpi-box-num{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:32px;
+  font-weight:700;
+  color:var(--navy);
+  letter-spacing:-0.02em;
+  line-height:1;
+  margin-bottom:6px;
+}
+.kpi-box-label{
+  font-size:13px;
+  color:var(--text-soft);
+  font-weight:500;
+}
+
+/* ============ METRIC GRID (dark cards) ============ */
+.metric-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:14px;
+  margin:24px 0;
+}
+.metric-card{
+  background:linear-gradient(135deg,var(--navy) 0%,var(--navy-light) 100%);
+  color:white;
+  padding:22px 20px;
+  border-radius:var(--radius-sm);
+  position:relative;
+  overflow:hidden;
+}
+.metric-card.green{background:linear-gradient(135deg,var(--green-dark) 0%,#00A862 100%)}
+.metric-card-label{
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  opacity:0.85;
+  margin-bottom:8px;
+}
+.metric-card-value{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:28px;
+  font-weight:700;
+  letter-spacing:-0.02em;
+  line-height:1.1;
+}
+.metric-card-sub{
+  font-size:12px;
+  opacity:0.8;
+  margin-top:6px;
+}
+
+/* ============ TABLES ============ */
+.tbl-wrap{
+  overflow-x:auto;
+  margin:20px -8px;
+  padding:0 8px;
+  -webkit-overflow-scrolling:touch;
+  border-radius:var(--radius-sm);
+}
+table{
+  width:100%;
+  border-collapse:separate;
+  border-spacing:0;
+  font-size:13.5px;
+  background:white;
+  border-radius:var(--radius-sm);
+  overflow:hidden;
+  box-shadow:0 1px 3px rgba(10,31,68,0.06);
+  min-width:600px;
+}
+thead th{
+  background:var(--navy);
+  color:white;
+  text-align:left;
+  padding:12px 14px;
+  font-weight:600;
+  font-size:12.5px;
+  letter-spacing:0.04em;
+}
+thead th:first-child{border-top-left-radius:var(--radius-sm)}
+thead th:last-child{border-top-right-radius:var(--radius-sm)}
+tbody td{
+  padding:11px 14px;
+  border-bottom:1px solid #EEF1F6;
+  vertical-align:top;
+  line-height:1.5;
+}
+tbody tr:nth-child(even){background:#FAFBFE}
+tbody tr:hover{background:#F0F5FC}
+tbody tr:last-child td{border-bottom:none}
+td.bold,td b{color:var(--navy);font-weight:700}
+td.green-cell{color:var(--green-dark);font-weight:700}
+tr.highlight-row td{background:#EDFAF3 !important;color:var(--navy);font-weight:700}
+tr.highlight-row td.bold{color:var(--navy);font-weight:800}
+
+/* ============ SOCRATIC QUESTIONS ============ */
+.socratic-list{
+  display:flex;
+  flex-direction:column;
+  gap:28px;
+  margin:32px 0;
+}
+.socratic-item{
+  background:#FAFBFE;
+  border:1px solid #E5EAF2;
+  border-radius:var(--radius);
+  padding:28px 32px;
+  position:relative;
+  overflow:hidden;
+}
+.socratic-item::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  width:4px;
+  height:100%;
+  background:linear-gradient(180deg,var(--green) 0%,var(--green-dark) 100%);
+}
+.socratic-num{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:0.2em;
+  color:var(--green-dark);
+  text-transform:uppercase;
+  margin-bottom:10px;
+}
+.socratic-q{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:clamp(17px,2.4vw,21px);
+  font-weight:600;
+  color:var(--navy);
+  line-height:1.4;
+  margin-bottom:14px;
+  letter-spacing:-0.01em;
+}
+.socratic-ctx{
+  font-size:14px;
+  color:var(--text-soft);
+  line-height:1.55;
+  padding-top:12px;
+  border-top:1px solid #EEF1F6;
+  font-style:italic;
+}
+.socratic-ctx::before{
+  content:'Contexto · ';
+  font-weight:700;
+  color:var(--green-dark);
+  font-style:normal;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  font-size:11.5px;
+}
+
+/* ============ ABT BLOCKS ============ */
+.abt-stack{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+  margin:32px 0;
+}
+.abt-block{
+  background:white;
+  border:1px solid #E5EAF2;
+  border-radius:var(--radius);
+  padding:28px 32px;
+  position:relative;
+  box-shadow:var(--shadow);
+}
+.abt-block.and{border-top:4px solid var(--green)}
+.abt-block.but{border-top:4px solid var(--fuchsia)}
+.abt-block.therefore{border-top:4px solid var(--green)}
+.abt-label{
+  display:inline-block;
+  font-family:'Space Grotesk',sans-serif;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:0.2em;
+  padding:5px 14px;
+  border-radius:100px;
+  margin-bottom:14px;
+  text-transform:uppercase;
+}
+.abt-block.and .abt-label{background:rgba(0,255,136,0.15);color:var(--green-dark)}
+.abt-block.but .abt-label{background:rgba(255,56,100,0.12);color:var(--fuchsia)}
+.abt-block.therefore .abt-label{background:var(--navy);color:var(--green)}
+.abt-title{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:18px;
+  font-weight:700;
+  color:var(--navy);
+  margin-bottom:10px;
+}
+.abt-body{
+  font-size:15.5px;
+  color:var(--text);
+  line-height:1.65;
+}
+
+/* ============ FOUNDERS / TEAM ============ */
+.team-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:18px;
+  margin:24px 0;
+}
+.team-card{
+  background:linear-gradient(180deg,#FAFBFE 0%,white 100%);
+  border:1px solid #E5EAF2;
+  border-radius:var(--radius);
+  padding:24px 22px;
+  position:relative;
+  overflow:hidden;
+}
+.team-card.founder::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:4px;
+  background:linear-gradient(90deg,var(--green),var(--fuchsia));
+}
+.team-card.advisor::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:3px;
+  background:var(--blue);
+}
+.team-name{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:19px;
+  font-weight:700;
+  color:var(--navy);
+  margin-bottom:4px;
+  letter-spacing:-0.01em;
+}
+.team-role{
+  font-size:12.5px;
+  color:var(--green-dark);
+  font-weight:600;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  margin-bottom:14px;
+}
+.team-card.advisor .team-role{color:var(--blue)}
+.team-bio{
+  font-size:14px;
+  color:var(--text);
+  line-height:1.6;
+}
+
+/* ============ PHASE TABLE ============ */
+.phase-row{display:contents}
+
+/* ============ VIDEO BLOCK ============ */
+.video-block{
+  background:var(--navy);
+  border-radius:var(--radius);
+  padding:8px;
+  margin:32px 0;
+  box-shadow:var(--shadow-lg);
+}
+.video-wrap{
+  position:relative;
+  width:100%;
+  padding-bottom:56.25%;
+  height:0;
+  overflow:hidden;
+  border-radius:var(--radius-sm);
+  background:var(--navy-deep);
+}
+.video-wrap iframe{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  border:0;
+}
+.case-card{
+  background:linear-gradient(135deg,var(--navy) 0%,var(--navy-light) 100%);
+  color:white;
+  padding:28px 32px;
+  border-radius:var(--radius);
+  margin:24px 0;
+  border-left:4px solid var(--green);
+}
+.case-card h3{color:white;margin:0 0 12px}
+.case-card-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:20px;
+  margin-bottom:14px;
+  font-size:13.5px;
+}
+.case-card-meta-item{
+  display:flex;
+  flex-direction:column;
+}
+.case-card-meta-label{
+  font-size:10.5px;
+  letter-spacing:0.15em;
+  color:var(--green);
+  text-transform:uppercase;
+  font-weight:700;
+  margin-bottom:3px;
+}
+.case-card-meta-val{font-weight:600;color:white}
+.case-card-body{
+  font-size:14.5px;
+  opacity:0.9;
+  line-height:1.6;
+}
+
+/* ============ CTA BLOCK (closing) ============ */
+.cta-block{
+  background:linear-gradient(135deg,var(--navy-deep) 0%,var(--navy) 100%);
+  color:white;
+  border-radius:var(--radius);
+  padding:40px 44px;
+  margin:32px 0;
+  position:relative;
+  overflow:hidden;
+}
+.cta-block::before{
+  content:'';
+  position:absolute;
+  top:-50%;
+  right:-20%;
+  width:60%;
+  height:200%;
+  background:radial-gradient(circle,rgba(0,255,136,0.1) 0%,transparent 60%);
+  pointer-events:none;
+}
+.cta-tag{
+  display:inline-block;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:0.2em;
+  color:var(--green);
+  text-transform:uppercase;
+  margin-bottom:14px;
+  position:relative;
+  z-index:2;
+}
+.cta-title{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:clamp(22px,3vw,28px);
+  font-weight:700;
+  margin-bottom:18px;
+  position:relative;
+  z-index:2;
+}
+.cta-list{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:16px;
+  margin-top:24px;
+  position:relative;
+  z-index:2;
+}
+.cta-list-item{
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.1);
+  padding:16px 18px;
+  border-radius:var(--radius-sm);
+}
+.cta-list-label{
+  font-size:10.5px;
+  font-weight:700;
+  letter-spacing:0.15em;
+  color:var(--green);
+  text-transform:uppercase;
+  margin-bottom:6px;
+}
+.cta-list-val{
+  font-size:14px;
+  color:white;
+  line-height:1.5;
+}
+
+/* ============ BIG QUESTION (final) ============ */
+.big-question{
+  text-align:center;
+  padding:48px 32px;
+  background:linear-gradient(135deg,#F8FAFE 0%,#EEF3FB 100%);
+  border-radius:var(--radius);
+  margin:32px 0;
+  border:1px solid #E5EAF2;
+}
+.big-question-q{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:clamp(22px,3.2vw,32px);
+  font-weight:700;
+  color:var(--navy);
+  line-height:1.3;
+  letter-spacing:-0.02em;
+  margin-bottom:20px;
+  font-style:italic;
+}
+.big-question-sub{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:clamp(16px,2vw,20px);
+  color:var(--green-dark);
+  font-weight:600;
+  font-style:italic;
+}
+
+/* ============ FOOTER ============ */
+.footer{
+  background:var(--navy-deep);
+  color:white;
+  padding:60px 24px 40px;
+  text-align:center;
+  margin-top:80px;
+}
+.footer h2{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:clamp(24px,4vw,36px);
+  margin-bottom:16px;
+  color:var(--green);
+  letter-spacing:-0.02em;
+}
+.footer p{
+  max-width:600px;
+  margin:0 auto 14px;
+  opacity:0.8;
+  font-size:15px;
+}
+.footer-meta{
+  margin-top:40px;
+  padding-top:30px;
+  border-top:1px solid rgba(255,255,255,0.1);
+  font-size:12.5px;
+  opacity:0.55;
+  letter-spacing:0.05em;
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width:1024px){
+  .layout{grid-template-columns:1fr;gap:0;padding:16px}
+  .sidebar{
+    position:fixed;
+    top:0;
+    left:-300px;
+    height:100vh;
+    width:280px;
+    background:white;
+    z-index:200;
+    padding:80px 16px 24px;
+    box-shadow:var(--shadow-lg);
+    transition:left 0.3s;
+  }
+  .sidebar.open{left:0}
+  .sidebar-backdrop{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(10,31,68,0.4);
+    backdrop-filter:blur(4px);
+    z-index:150;
+  }
+  .sidebar-backdrop.open{display:block}
+  .menu-toggle{display:inline-flex}
+  .content{padding:32px 28px}
+  .socratic-item{padding:24px 26px}
+  .abt-block{padding:24px 26px}
+  .cta-block{padding:32px 28px}
+}
+
+@media (max-width:768px){
+  body{font-size:15px}
+  .content{padding:24px 20px}
+  .section h1{font-size:24px;padding-bottom:14px;margin-bottom:18px}
+  .section h2{font-size:18px;margin:28px 0 12px}
+  .section h3{font-size:15px}
+  .section p,.section ul li{font-size:14.5px}
+  table{font-size:12.5px;min-width:520px}
+  thead th,tbody td{padding:9px 10px}
+  .kpi-box-num{font-size:26px}
+  .metric-card-value{font-size:22px}
+  .callout{padding:16px 18px;font-size:14px}
+  .callout-large{padding:24px 22px;font-size:15.5px}
+  .socratic-q{font-size:16.5px}
+  .socratic-item{padding:20px 22px}
+  .abt-block{padding:20px 22px}
+  .case-card{padding:22px 24px}
+  .cta-block{padding:28px 22px}
+  .big-question{padding:36px 22px}
+  .layout{padding:12px}
+  .topnav-inner{padding:12px 16px}
+  .cover h1{font-size:80px}
+}
+
+@media (max-width:430px){
+  .team-grid,.kpi-hero,.metric-grid{grid-template-columns:1fr}
+  .content{padding:22px 16px;border-radius:8px}
+  .section h1{font-size:22px}
+  .footer{padding:40px 16px 30px}
+  .case-card-meta{flex-direction:column;gap:10px}
+  .socratic-q{font-size:15.5px}
+}
+
+/* Print */
+@media print{
+  .topnav,.sidebar,.menu-toggle,.cover-scroll{display:none}
+  .layout{grid-template-columns:1fr;padding:0}
+  .content{box-shadow:none;padding:0}
+  .section{page-break-inside:avoid;margin-bottom:30px}
+  .cover{min-height:auto;padding:30px}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ COVER HERO ============ -->
+<section class="cover" id="top">
+  <div class="cover-inner">
+    <div class="cover-badge">Documento Confidencial · Reunión Ejecutiva</div>
+    <div class="cover-brand-wrap">
+      <img src="assets/logo-transparent.png" alt="VANTTIA" class="cover-logo">
+      <span class="cover-brand-text">VANTTIA</span>
+    </div>
+    <p class="cover-tagline">Inteligencia Agéntica para la nueva era del seguro ecuatoriano</p>
+    <div class="cover-divider"></div>
+    <h2 class="cover-title">Propuesta Estratégica</h2>
+    <p class="cover-subtitle">Hispana de Seguros y Reaseguros S.A.</p>
+    <span class="cover-version">VANTTIA · Mayo 2026</span>
+  </div>
+  <div class="cover-scroll">Desliza para explorar ↓</div>
+</section>
+
+<!-- ============ TOP NAV ============ -->
+<nav class="topnav">
+  <div class="topnav-inner">
+    <div class="topnav-brand">
+      <img src="assets/logo-transparent.png" alt="VANTTIA" class="nav-logo">
+      VANTTIA <span style="font-weight:400;color:var(--text-soft);font-size:14px">· Propuesta Hispana</span>
+    </div>
+    <button class="menu-toggle" id="menuToggle">☰ Índice</button>
+  </div>
+</nav>
+
+<div class="sidebar-backdrop" id="backdrop"></div>
+
+<!-- ============ MAIN LAYOUT ============ -->
+<div class="layout">
+
+<!-- SIDEBAR -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-section">
+    <div class="sidebar-title">Índice</div>
+    <a href="#s1" class="sidebar-link"><span class="sidebar-link-num">01</span>Antes de proponer</a>
+    <a href="#s2" class="sidebar-link"><span class="sidebar-link-num">02</span>Lo que aprendimos</a>
+    <a href="#s3" class="sidebar-link"><span class="sidebar-link-num">03</span>Cuatro preguntas</a>
+    <a href="#s4" class="sidebar-link"><span class="sidebar-link-num">04</span>Patrones del mercado</a>
+    <a href="#s5" class="sidebar-link"><span class="sidebar-link-num">05</span>Lo que el mercado validó</a>
+    <a href="#s6" class="sidebar-link"><span class="sidebar-link-num">06</span>Punto de inflexión</a>
+    <a href="#s7" class="sidebar-link"><span class="sidebar-link-num">07</span>Quiénes somos</a>
+    <a href="#s8" class="sidebar-link"><span class="sidebar-link-num">08</span>Qué entregamos</a>
+    <a href="#s9" class="sidebar-link"><span class="sidebar-link-num">09</span>Valor concreto</a>
+    <a href="#s10" class="sidebar-link"><span class="sidebar-link-num">10</span>Caso de uso</a>
+    <a href="#s11" class="sidebar-link"><span class="sidebar-link-num">11</span>Próximo paso</a>
+  </div>
+</aside>
+
+<!-- CONTENT -->
+<main class="content">
+
+<!-- ============ SECCIÓN 1 ============ -->
+<section class="section" id="s1">
+  <div class="section-num">Sección 01</div>
+  <h1>Antes de proponer nada, queremos entender</h1>
+
+  <div class="callout-large">
+    Hemos preparado esta conversación con una sola intención: <em>escuchar dónde le aprieta el zapato a Hispana en 2026</em>. Lo que sigue son preguntas, no afirmaciones. Las respuestas son tuyas.
+  </div>
+
+  <div class="socratic-list">
+    <div class="socratic-item">
+      <div class="socratic-num">Pregunta 01</div>
+      <div class="socratic-q">¿Qué movimientos del mercado te quitan el sueño este año?</div>
+    </div>
+    <div class="socratic-item">
+      <div class="socratic-num">Pregunta 02</div>
+      <div class="socratic-q">¿Dónde sientes que Hispana avanza más lento de lo que el momento permite?</div>
+    </div>
+    <div class="socratic-item">
+      <div class="socratic-num">Pregunta 03</div>
+      <div class="socratic-q">¿Qué procesos internos crees que están consumiendo más energía de la que deberían?</div>
+    </div>
+    <div class="socratic-item">
+      <div class="socratic-num">Pregunta 04</div>
+      <div class="socratic-q">¿Qué decisión tecnológica han postergado más tiempo del que les gustaría?</div>
+    </div>
+  </div>
+
+  <div class="disclaimer">
+    <span class="disclaimer-label">Disclaimer</span>Las siguientes páginas son nuestra lectura externa basada en información pública disponible. No es un diagnóstico cerrado, sino un punto de partida para tu validación. Si alguna referencia no refleja con precisión la realidad interna de Hispana, te pedimos corregirnos en el momento: este documento es un borrador de conversación, no una afirmación definitiva.
+  </div>
+</section>
+
+<!-- ============ SECCIÓN 2 ============ -->
+<section class="section" id="s2">
+  <div class="section-num">Sección 02</div>
+  <h1>Lo que aprendimos sobre Hispana antes de esta reunión</h1>
+  <p class="section-sub">Información compilada a partir de fuentes públicas verificables.</p>
+
+  <h2>Identidad corporativa</h2>
+  <ul>
+    <li>29 años de trayectoria · constituida el 16 de agosto de 2002</li>
+    <li>Matriz: Urdesa Central, Guayaquil</li>
+    <li>6 sucursales: Quito, Cuenca, Ambato, Loja, Santo Domingo, Machala</li>
+    <li>Entre 101 y 500 empleados directos</li>
+    <li>Subsidiaria: M.E.D.I.C.A. Medicina y Diagnóstico C.A. (100%)</li>
+  </ul>
+
+  <h2>Posición de mercado</h2>
+  <div class="kpi-hero">
+    <div class="kpi-box">
+      <div class="kpi-box-tag">Ranking nacional</div>
+      <div class="kpi-box-num">#7</div>
+      <div class="kpi-box-label">Por primas netas H1 2025</div>
+    </div>
+    <div class="kpi-box">
+      <div class="kpi-box-tag">Primas netas</div>
+      <div class="kpi-box-num">$226,3M</div>
+      <div class="kpi-box-label">Primer semestre 2025</div>
+    </div>
+    <div class="kpi-box">
+      <div class="kpi-box-tag">Cuota</div>
+      <div class="kpi-box-num">8,40%</div>
+      <div class="kpi-box-label">Mercado general</div>
+    </div>
+    <div class="kpi-box">
+      <div class="kpi-box-tag">Concentración</div>
+      <div class="kpi-box-num">68,89%</div>
+      <div class="kpi-box-label">Negocio entre Quito y Guayaquil</div>
+    </div>
+  </div>
+
+  <h2>Indicadores financieros</h2>
+  <div class="metric-grid">
+    <div class="metric-card green">
+      <div class="metric-card-label">ROE</div>
+      <div class="metric-card-value">79,46%</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-card-label">Activos totales</div>
+      <div class="metric-card-value">$166,69M</div>
+      <div class="metric-card-sub">+28,11% interanual</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-card-label">Patrimonio neto</div>
+      <div class="metric-card-value">$23,62M</div>
+      <div class="metric-card-sub">61,80% en capital social</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-card-label">Contratos institucionales</div>
+      <div class="metric-card-value">Activos</div>
+      <div class="metric-card-sub">De alto volumen</div>
+    </div>
+  </div>
+
+  <h2>Indicadores operativos</h2>
+  <div class="metric-grid">
+    <div class="metric-card">
+      <div class="metric-card-label">Liquidez</div>
+      <div class="metric-card-value">1,15</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-card-label">Cartera vencida</div>
+      <div class="metric-card-value">29,81%</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-card-label">Gastos administrativos</div>
+      <div class="metric-card-value">~$6,81M</div>
+      <div class="metric-card-sub">Anuales</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-card-label">Ingresos 2024</div>
+      <div class="metric-card-value">$152,76M</div>
+    </div>
+  </div>
+
+  <div class="callout">Este es el punto de partida. Lo que sigue son las preguntas que estos datos abren.</div>
+</section>
+
+<!-- ============ SECCIÓN 3 ============ -->
+<section class="section" id="s3">
+  <div class="section-num">Sección 03</div>
+  <h1>Cuatro preguntas que nos hicimos al leer estos datos</h1>
+  <p class="section-sub">No esperamos respuestas hoy. Las planteamos porque son las que orientan nuestra propuesta.</p>
+
+  <div class="socratic-list">
+    <div class="socratic-item">
+      <div class="socratic-num">Pregunta 01 · Captación digital</div>
+      <div class="socratic-q">¿Cuántos prospectos digitales llegan cada mes a la web de Hispana, y qué porcentaje de ellos termina cotizando en plataformas de terceros antes de regresar a la red de intermediarios?</div>
+      <div class="socratic-ctx">El portal actual opera como sitio informativo; los cotizadores se ejecutan en infraestructura externa.</div>
+    </div>
+    <div class="socratic-item">
+      <div class="socratic-num">Pregunta 02 · Productividad de equipos</div>
+      <div class="socratic-q">¿Qué porcentaje del tiempo de tus equipos comerciales y operativos se va hoy en tareas repetitivas — emisión, conciliación, seguimiento — versus actividades de generación de valor con el cliente?</div>
+      <div class="socratic-ctx">El mercado regional muestra que entre 40% y 60% del tiempo operativo de aseguradoras tradicionales se consume en tareas orquestables por agentes.</div>
+    </div>
+    <div class="socratic-item">
+      <div class="socratic-num">Pregunta 03 · Integraciones con aliados</div>
+      <div class="socratic-q">El programa LATAM Pass acredita millas en hasta 15 días laborables. ¿Cuántos tickets de servicio al cliente y cuántas renovaciones se ven afectadas por ese desfase de información?</div>
+      <div class="socratic-ctx">El flujo actual es manual — vía call center o módulo web — sin bus de integración bidireccional.</div>
+    </div>
+    <div class="socratic-item">
+      <div class="socratic-num">Pregunta 04 · Renovación y retención</div>
+      <div class="socratic-q">¿Qué porcentaje de las pólizas de Hispana hoy se renuevan de forma automatizada vs cuántas requieren contacto manual del equipo comercial para sostener al cliente en la casa?</div>
+      <div class="socratic-ctx">El costo de retener una póliza vía contacto manual recurrente erosiona el margen del ramo y consume capacidad de adquisición de nuevos clientes.</div>
+    </div>
+  </div>
+
+  <div class="callout">Si alguna de estas preguntas ya tiene respuesta interna, queremos escucharla. Si abre una conversación nueva, eso también es valor.</div>
+</section>
+
+<!-- ============ SECCIÓN 4 ============ -->
+<section class="section" id="s4">
+  <div class="section-num">Sección 04</div>
+  <h1>Lo que cuesta no resolverlo — patrones observados en el mercado</h1>
+  <p class="section-sub">Tres dinámicas que afectan a aseguradoras con arquitectura digital pre-2020 en mercados andinos.</p>
+
+  <h2>Dinámica 01 · Fuga del lead orgánico digital</h2>
+  <p>Cuando los cotizadores web operan en plataformas de terceros, el 100% de la atribución analítica y la trazabilidad del lead queda fuera del control de la aseguradora. El costo de pauta digital sigue siendo de la aseguradora; el dato y la relación con el prospecto pasan al intermediario tecnológico.</p>
+  <p><strong>Implicación práctica:</strong> se invierte en marketing para captar tráfico que termina alimentando bases de datos ajenas.</p>
+
+  <h2>Dinámica 02 · Erosión silenciosa de margen por carga operativa</h2>
+  <p>Las aseguradoras tradicionales con flujos híbridos (parte digital, parte manual) experimentan compresión de margen no por caída de primas, sino por aumento del costo unitario de servir cada póliza. El indicador suele aparecer tarde: cuando los gastos administrativos crecen en proporción mayor a los ingresos.</p>
+  <p><strong>Implicación práctica:</strong> el costo de mantener una póliza activa sube sin que el cliente perciba mejora en su experiencia.</p>
+
+  <h2>Dinámica 03 · Brecha competitiva acelerada por capacidades digitales</h2>
+  <p>El benchmark regional muestra que entre 2022 y 2025 las aseguradoras que implementaron motores de cotización en tiempo real, IA para detección de fraude y aplicaciones de autogestión, ganaron entre 1,5 y 3 puntos de cuota de mercado anuales frente a competidores con portales informativos.</p>
+  <p><strong>Implicación práctica:</strong> la distancia con los líderes no se cierra orgánicamente; se cierra solo con un salto de capacidades.</p>
+
+  <h2>Resumen — Patrón → Implicación → Riesgo</h2>
+  <div class="tbl-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th style="width:30%">Patrón del mercado</th>
+        <th style="width:35%">Implicación financiera típica</th>
+        <th style="width:35%">Riesgo estratégico de mediano plazo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="bold">Cotizadores delegados a terceros</td>
+        <td>Costo de pauta sin atribución directa</td>
+        <td>Dependencia creciente de intermediarios tecnológicos</td>
+      </tr>
+      <tr>
+        <td class="bold">Flujos híbridos manuales en backoffice</td>
+        <td>Costo por póliza creciente</td>
+        <td>Compresión de margen sin alarma temprana</td>
+      </tr>
+      <tr>
+        <td class="bold">Portales informativos sin capa transaccional</td>
+        <td>Tasa de conversión 5-10× menor que web transaccional</td>
+        <td>Pérdida de cuota frente a competidores digitales</td>
+      </tr>
+      <tr>
+        <td class="bold">Integraciones manuales con aliados</td>
+        <td>Tickets de soporte + churn silencioso</td>
+        <td>Erosión de NPS sin visibilidad en dashboard</td>
+      </tr>
+      <tr>
+        <td class="bold">Procesos sin trazabilidad extremo a extremo</td>
+        <td>Riesgo de incumplimiento en cuentas institucionales</td>
+        <td>Exposición regulatoria y reputacional creciente</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="callout">El siguiente paso es contrastar estos patrones con la realidad interna de Hispana.</div>
+</section>
+
+<!-- ============ SECCIÓN 5 ============ -->
+<section class="section" id="s5">
+  <div class="section-num">Sección 05</div>
+  <h1>Lo que el mercado ya validó</h1>
+  <p class="section-sub">Capacidades digitales activas en aseguradoras del top-10 ecuatoriano — H1 2025.</p>
+
+  <div class="tbl-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Aseguradora</th>
+        <th>Primas Netas H1 2025</th>
+        <th>Capacidad digital activa</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td class="bold">1</td><td class="bold">Seguros del Pichincha</td><td>$440,1M</td><td>Cotización digital en 5 minutos · siniestralidad eficiente 22%</td></tr>
+      <tr><td class="bold">2</td><td class="bold">Chubb Seguros Ecuador</td><td>$394,0M</td><td>Cobertura ciberriesgo · suscripción digital automatizada</td></tr>
+      <tr><td class="bold">3</td><td class="bold">Seguros Equinoccial</td><td>$382,1M</td><td>Asistencia express · seguros modulares · alta integración con red de intermediarios</td></tr>
+      <tr><td class="bold">4</td><td class="bold">Zurich Seguros Ecuador</td><td>$280,4M</td><td>Modelos de IA para detección de fraudes · métricas ASG en pólizas</td></tr>
+      <tr><td class="bold">6</td><td class="bold">Aseguradora del Sur</td><td>$246,0M</td><td>Inspección de siniestros con drones · canales digitales rápidos</td></tr>
+      <tr class="highlight-row"><td class="bold">7</td><td class="bold">Hispana de Seguros</td><td>$226,3M</td><td>Portal informativo · cotizadores en infraestructura externa</td></tr>
+      <tr><td class="bold">8</td><td class="bold">Latina Seguros</td><td>$210,7M</td><td>Plataformas de cotización instantánea · alianzas con cadenas de farmacias</td></tr>
+      <tr><td class="bold">10</td><td class="bold">Sweaden Seguros</td><td>$151,2M</td><td>Aplicación móvil nativa diseñada para millennials · autogestión de reclamos</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2>Lectura del benchmark</h2>
+  <div class="kpi-hero">
+    <div class="kpi-box">
+      <div class="kpi-box-tag">Por encima</div>
+      <div class="kpi-box-num">5</div>
+      <div class="kpi-box-label">Aseguradoras con motor transaccional propio</div>
+    </div>
+    <div class="kpi-box">
+      <div class="kpi-box-tag">Por debajo</div>
+      <div class="kpi-box-num">3</div>
+      <div class="kpi-box-label">Escalando rápido con capacidades digitales nativas</div>
+    </div>
+    <div class="kpi-box">
+      <div class="kpi-box-tag">Capacidad propia</div>
+      <div class="kpi-box-num">$73,4M</div>
+      <div class="kpi-box-label">Activos líquidos disponibles</div>
+    </div>
+  </div>
+
+  <div class="callout-large">
+    La brecha competitiva no es de talento, ni de capital, ni de marca. Hispana tiene 29 años, $73,4M en activos líquidos, patrimonio en expansión y una de las marcas con más equity del sector. <em>La brecha es de arquitectura digital</em> — y es la única variable estructuralmente cerrable en 12 a 18 meses.
+  </div>
+
+  <div class="callout">
+    Cada aseguradora del top-10 está tomando hoy decisiones de arquitectura digital que definirán su posición competitiva de los próximos cinco años. La pregunta natural para Hispana es la misma: con qué socio diseña su salto, en qué orden y en qué horizonte.
+  </div>
+</section>
+
+<!-- ============ SECCIÓN 6 ============ -->
+<section class="section" id="s6">
+  <div class="section-num">Sección 06</div>
+  <h1>El punto de inflexión</h1>
+  <p class="section-sub">Una lectura honesta del momento de Hispana — y de lo que viene.</p>
+
+  <div class="abt-stack">
+    <div class="abt-block and">
+      <span class="abt-label">AND · Lo que Hispana tiene</span>
+      <div class="abt-body">29 años de trayectoria construyendo una de las marcas más sólidas del seguro ecuatoriano. ROE excepcional. Patrimonio en expansión. Contratos institucionales de alto volumen. Presencia geográfica consolidada. Una subsidiaria propia en el ramo de salud. Solidez patrimonial que muy pocas aseguradoras de la región pueden mostrar.</div>
+    </div>
+    <div class="abt-block but">
+      <span class="abt-label">BUT · Lo que el momento exige</span>
+      <div class="abt-body">El mercado asegurador andino atraviesa el mayor salto arquitectónico de su historia: cotización en tiempo real, integraciones por API con aliados estratégicos, agentes autónomos en backoffice, trazabilidad extremo a extremo de cada póliza. La infraestructura digital que sostuvo a Hispana hasta 2024 no es la que la sostendrá hasta 2030.</div>
+    </div>
+    <div class="abt-block therefore">
+      <span class="abt-label">THEREFORE · Lo que proponemos conversar</span>
+      <div class="abt-body">El siguiente paso natural no es comprar software, ni contratar una agencia, ni iniciar un proyecto Big Four de dieciocho meses. Es diseñar — junto a un socio que entienda la lógica agéntica end-to-end — la arquitectura de transformación que cierra la brecha digital de Hispana en una ventana de doce a dieciocho meses, sin tocar la operación viva hasta que cada componente esté validado.</div>
+    </div>
+  </div>
+
+  <div class="callout-large">
+    <em>No vendemos software ni chatbots.</em> Vendemos autonomía operativa empaquetada bajo un modelo híbrido de tecnología más consultoría.
+  </div>
+
+  <p style="margin-top:24px;color:var(--text-soft);font-size:14.5px;font-style:italic;text-align:center">En las próximas tres secciones explicamos quiénes somos, qué entregamos y cómo lo hacemos.</p>
+</section>
+
+<!-- ============ SECCIÓN 7 ============ -->
+<section class="section" id="s7">
+  <div class="section-num">Sección 07</div>
+  <h1>Quiénes están detrás de esta propuesta</h1>
+  <p class="section-sub">VANTTIA combina tres founders y una red de consultores senior con trayectoria verificable.</p>
+
+  <h2>Founders</h2>
+  <div class="team-grid">
+    <div class="team-card founder">
+      <div class="team-name">Julio Candell</div>
+      <div class="team-role">CEO · El Estratega</div>
+      <div class="team-bio">Trayectoria empresarial en sectores de logística, marketing e IT corporativo. Founder de NETCORP (canal corporativo Dell, Asus, Lenovo). CCO de Extramile (Arquitectura de Datos).</div>
+    </div>
+    <div class="team-card founder">
+      <div class="team-name">Luis Reyes</div>
+      <div class="team-role">CTA · El Arquitecto Técnico</div>
+      <div class="team-bio">Lead developer con experiencia en productos escalables y coder para empresas multinacionales en Singapur, USA y otros mercados. Responsable de la arquitectura del motor agéntico de VANTTIA, integraciones por API y la metodología Sandbox Isolation que aísla el riesgo operativo del cliente durante la fase de validación.</div>
+    </div>
+    <div class="team-card founder">
+      <div class="team-name">Anderson Boscan</div>
+      <div class="team-role">CCO · El Narrador</div>
+      <div class="team-bio">Empresario del sector comunicación, fundador del medio digital más importante de Ecuador. Arquitecto de la narrativa pública y la influencia corporativa de VANTTIA. Responsable del posicionamiento institucional, relaciones públicas y construcción de autoridad sectorial en el mercado andino.</div>
+    </div>
+  </div>
+
+  <h2>Consultores senior</h2>
+  <div class="team-grid">
+    <div class="team-card advisor">
+      <div class="team-name">Diego Montenegro</div>
+      <div class="team-role">Estrategia Organizacional</div>
+      <div class="team-bio">Doctor en Economía. Harvard Top Management. Profesor del IDE Business School. Creador del modelo CulteX de innovación estratégica.</div>
+    </div>
+    <div class="team-card advisor">
+      <div class="team-name">Marcelo Albuja</div>
+      <div class="team-role">Levantamiento de Procesos</div>
+      <div class="team-bio">MSc Columbia University. MSc IESE Business School. Operations Manager Uber. Levantamientos críticos para eliminación de cuellos de botella pre-IA.</div>
+    </div>
+    <div class="team-card advisor">
+      <div class="team-name">Teddy Arteaga</div>
+      <div class="team-role">Arquitectura de Datos</div>
+      <div class="team-bio">Especialista en arquitectura Lakehouse / Databricks. Garantiza que los modelos operen sobre datos limpios, gobernados y trazables — el 80% del costo oculto de cualquier proyecto de IA.</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    Combinamos rigor MBA, dominio de código profundo y red de consultores senior — una combinación poco común en el mercado andino para abordar proyectos de transformación con IA agéntica.
+  </div>
+</section>
+
+<!-- ============ SECCIÓN 8 ============ -->
+<section class="section" id="s8">
+  <div class="section-num">Sección 08</div>
+  <h1>Qué entregamos exactamente</h1>
+  <p class="section-sub">VANTTIA Enterprise Core™ — Arquitectura de transformación agéntica end-to-end.</p>
+
+  <h2>El producto</h2>
+  <p><strong>VANTTIA Enterprise Core™</strong> — <em>"La arquitectura de tu transformación."</em></p>
+  <p>Consultoría de transformación agéntica end-to-end diseñada para PYMEs avanzadas y corporativos en sectores de alta complejidad regulatoria o logística intensiva: salud, seguros, banca y operaciones complejas. <strong>No es software empaquetado.</strong> Es la arquitectura agéntica y de procesos diseñada sobre una zona segura, garantizando alineación con los objetivos macro de la organización.</p>
+
+  <h2>Metodología propietaria — AI Lab en 4 Fases</h2>
+  <div class="tbl-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th style="width:18%">Fase</th>
+        <th style="width:42%">Qué hacemos</th>
+        <th style="width:40%">Garantía para el cliente</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="bold">F1 · Sprint</td>
+        <td>Hackathon estratégico con el equipo del cliente · co-construcción del mapa de dolores y oportunidades · auditoría de arquitectura de datos · definición conjunta del alcance del Sandbox</td>
+        <td class="green-cell">La solución se diseña desde adentro del cliente, no se importa desde afuera — apropiación garantizada desde el día uno</td>
+      </tr>
+      <tr>
+        <td class="bold">F2 · Sandbox</td>
+        <td>Construcción del motor agéntico en entorno completamente aislado · cero código en producción · validación con datos reales</td>
+        <td class="green-cell">NPS post-Sandbox &gt; 70 antes de tocar sistemas vivos del cliente</td>
+      </tr>
+      <tr>
+        <td class="bold">F3 · Deployment</td>
+        <td>Integración progresiva con SLA garantizado · trazabilidad extremo a extremo · gobernanza LOPDP nativa</td>
+        <td class="green-cell">Cumplimiento contractual asegurado · cero riesgo de corte operativo</td>
+      </tr>
+      <tr>
+        <td class="bold">F4 · Mentoring</td>
+        <td>C-Level coaching continuo · transferencia de capacidades al equipo interno · evolución del modelo con datos del cliente</td>
+        <td class="green-cell">Independencia operativa post-go-live · sin dependencia consultiva crónica</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2>Sandbox Isolation · el diferenciador defendible</h2>
+  <div class="callout-large">
+    <em>Metodología Sandbox Isolation:</em> ninguna línea de código toca los sistemas de producción del cliente hasta que la solución esté completamente validada en un entorno de pruebas aislado. Cero riesgo operativo. Cero riesgo de pérdida de datos. Cero corte de servicio durante la fase de validación.
+  </div>
+
+  <h2>Add-on opcional</h2>
+  <p><strong>VANTTIA DataClean™</strong> — Pre-requisito de gobernanza para proyectos Enterprise Core. Resuelve el 80% del costo oculto de cualquier proyecto de IA: la limpieza, normalización y trazabilidad de los datos. Activación opcional según diagnóstico de Fase 1.</p>
+</section>
+
+<!-- ============ SECCIÓN 9 ============ -->
+<section class="section" id="s9">
+  <div class="section-num">Sección 09</div>
+  <h1>Cómo se traduciría en valor concreto</h1>
+  <p class="section-sub">Mapa de correspondencia entre los patrones del mercado y la propuesta de VANTTIA.</p>
+
+  <h2>Tabla maestra · Patrón → Solución → Impacto</h2>
+  <div class="tbl-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th style="width:30%">Patrón observado en el mercado</th>
+        <th style="width:35%">Propuesta VANTTIA</th>
+        <th style="width:35%">Impacto cualitativo esperado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="bold">Portal informativo sin capa transaccional · cotizadores ejecutados en infraestructura externa</td>
+        <td>Motor de cotización web responsive transaccional, integrado con la red de intermediarios actual y con atribución analítica directa</td>
+        <td>Recuperación del lead orgánico digital · conversión web significativamente superior a la de un portal informativo</td>
+      </tr>
+      <tr>
+        <td class="bold">Productividad operativa absorbida por tareas repetitivas (emisión, conciliación, seguimiento)</td>
+        <td>Agentes autónomos para flujos backoffice · orquestación de tareas repetitivas con supervisión humana</td>
+        <td>Liberación sustancial del tiempo operativo del equipo · redirección de la energía hacia actividades de valor con el cliente</td>
+      </tr>
+      <tr>
+        <td class="bold">Integraciones manuales con aliados estratégicos (LATAM Pass y similares)</td>
+        <td>Bus de integración API middleware con orquestación agéntica</td>
+        <td>Acreditación en tiempo real · reducción medible de tickets de soporte · mejora del NPS en procesos de retención</td>
+      </tr>
+      <tr>
+        <td class="bold">Renovaciones con contacto manual masivo</td>
+        <td>Agente de retención conversacional sobre WhatsApp + CRM · trazabilidad de cada interacción</td>
+        <td>Aumento de la tasa de renovación automatizada · reducción del costo de retención por póliza</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2>Tres KPIs que monitorearíamos juntos</h2>
+  <div class="kpi-hero">
+    <div class="kpi-box">
+      <div class="kpi-box-tag">KPI 01</div>
+      <div class="kpi-box-num">3-6%</div>
+      <div class="kpi-box-label">Tasa de conversión web · meta primeros 90 días post-deployment</div>
+    </div>
+    <div class="kpi-box">
+      <div class="kpi-box-tag">KPI 02</div>
+      <div class="kpi-box-num">15-25%</div>
+      <div class="kpi-box-label">Reducción esperada en rubros admin automatizables · primeros 12 meses</div>
+    </div>
+    <div class="kpi-box">
+      <div class="kpi-box-tag">KPI 03</div>
+      <div class="kpi-box-num">+30%</div>
+      <div class="kpi-box-label">Margen sobre SLA institucional · cumplimiento con margen de seguridad</div>
+    </div>
+  </div>
+
+  <div class="callout-large">
+    Cada uno de estos números se valida en <em>Fase 1 (Sprint hackathon)</em> antes de comprometer cualquier inversión en Fase 2 (Sandbox). No vendemos promesas; co-construimos la línea base junto con el equipo de Hispana.
+  </div>
+</section>
+
+<!-- ============ SECCIÓN 10 ============ -->
+<section class="section" id="s10">
+  <div class="section-num">Sección 10</div>
+  <h1>Un caso de uso ya ejecutado en el sector</h1>
+  <p class="section-sub">Integración de IA — Aseguradora Chubut, Argentina. Proyecto liderado por Luis Reyes, CTA de VANTTIA.</p>
+
+  <div class="case-card">
+    <h3>Caso de Uso · Integración AI</h3>
+    <div class="case-card-meta">
+      <div class="case-card-meta-item">
+        <span class="case-card-meta-label">Cliente</span>
+        <span class="case-card-meta-val">Aseguradora Chubut · Argentina</span>
+      </div>
+      <div class="case-card-meta-item">
+        <span class="case-card-meta-label">Sector</span>
+        <span class="case-card-meta-val">Seguros</span>
+      </div>
+      <div class="case-card-meta-item">
+        <span class="case-card-meta-label">Liderazgo técnico</span>
+        <span class="case-card-meta-val">Luis Reyes · CTA de VANTTIA</span>
+      </div>
+    </div>
+    <div class="case-card-body">Proyecto de integración de capacidades de IA en una aseguradora regional. La misma lógica arquitectónica que VANTTIA aplica hoy a sus clientes corporativos en el mercado andino.</div>
+  </div>
+
+  <div class="video-block">
+    <div class="video-wrap">
+      <iframe
+        id="caseVideo"
+        src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0"
+        title="Caso de Uso · Integración AI · Aseguradora Chubut"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+  <p style="font-size:12.5px;color:var(--text-soft);text-align:center;font-style:italic;margin-top:8px">Reemplazar el parámetro <code>embed/VIDEO_ID</code> del iframe con el ID real del video de YouTube.</p>
+
+  <div class="callout-large">
+    La metodología que aplicamos en esta integración es <em>exactamente la misma arquitectura agéntica</em> que aplicaríamos al proyecto con Hispana. El sector asegurador andino tiene patrones operativos comparables al argentino — y la curva de aprendizaje sectorial ya está absorbida por nuestro equipo técnico.
+  </div>
+</section>
+
+<!-- ============ SECCIÓN 11 ============ -->
+<section class="section" id="s11">
+  <div class="section-num">Sección 11</div>
+  <h1>El próximo paso</h1>
+  <p class="section-sub">Una pregunta. Una sesión. Sin compromiso de continuidad.</p>
+
+  <div class="big-question">
+    <div class="big-question-q">"De los cuatro patrones que conversamos, ¿cuál es el que Hispana quiere resolver primero?"</div>
+    <div class="big-question-sub">Por ahí empezamos.</div>
+  </div>
+
+  <div class="cta-block">
+    <div class="cta-tag">CTA único</div>
+    <div class="cta-title">Sesión Diagnóstico Ejecutiva</div>
+    <p style="position:relative;z-index:2;opacity:0.9;font-size:15px;line-height:1.6">Una sesión de 90 minutos con el equipo de VANTTIA.</p>
+    <div class="cta-list">
+      <div class="cta-list-item">
+        <div class="cta-list-label">Formato</div>
+        <div class="cta-list-val">Presencial (Quito o Guayaquil, a elección de Hispana) o virtual.</div>
+      </div>
+      <div class="cta-list-item">
+        <div class="cta-list-label">Output</div>
+        <div class="cta-list-val">Mapa preliminar de oportunidades cuantificadas y línea base para una eventual Fase 1 (Sprint).</div>
+      </div>
+      <div class="cta-list-item">
+        <div class="cta-list-label">Compromiso</div>
+        <div class="cta-list-val">Ninguno post-sesión. La sesión es un punto de partida, no un contrato.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout-large">
+    Hispana tiene 29 años de equity de marca, contratos institucionales sólidos y solidez patrimonial. La conversación de hoy no es sobre si transformarse digitalmente — <em>esa decisión ya la tomó el mercado</em>. Es sobre con quién, en qué orden, y en qué horizonte.
+  </div>
+
+  <p style="margin-top:32px;font-size:13.5px;color:var(--text-soft);text-align:center;font-style:italic">Para coordinar la Sesión Diagnóstico Ejecutiva, contactar al equipo de VANTTIA por los canales acordados durante esta presentación.</p>
+</section>
+
+</main>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="footer-brand-wrap">
+    <img src="assets/logo-transparent.png" alt="VANTTIA" class="footer-logo">
+    <span class="footer-brand-text">VANTTIA</span>
+  </div>
+  <p>Inteligencia Agéntica para Negocios Reales</p>
+  <p>Propuesta Estratégica · Hispana de Seguros y Reaseguros S.A.</p>
+  <div class="footer-meta">
+    VANTTIA · Mayo 2026<br>
+    Documento Confidencial · Reunión Ejecutiva
+  </div>
+</footer>
+
+<script>
+const toggle = document.getElementById('menuToggle');
+const sidebar = document.getElementById('sidebar');
+const backdrop = document.getElementById('backdrop');
+
+function closeSidebar(){
+  sidebar.classList.remove('open');
+  backdrop.classList.remove('open');
+  document.body.style.overflow = '';
+}
+function openSidebar(){
+  sidebar.classList.add('open');
+  backdrop.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+toggle.addEventListener('click', () => {
+  if(sidebar.classList.contains('open')) closeSidebar();
+  else openSidebar();
+});
+backdrop.addEventListener('click', closeSidebar);
+
+document.querySelectorAll('.sidebar-link').forEach(link => {
+  link.addEventListener('click', () => {
+    if(window.innerWidth <= 1024) closeSidebar();
+  });
+});
+
+const links = document.querySelectorAll('.sidebar-link');
+const sections = Array.from(links).map(l => {
+  const id = l.getAttribute('href').replace('#','');
+  return document.getElementById(id);
+}).filter(Boolean);
+
+function updateActive(){
+  const scrollY = window.scrollY + 140;
+  let active = sections[0];
+  for(const s of sections){
+    if(s && s.offsetTop <= scrollY) active = s;
+  }
+  links.forEach(l => l.classList.remove('active'));
+  if(active){
+    const activeLink = document.querySelector(`.sidebar-link[href="#${active.id}"]`);
+    if(activeLink) activeLink.classList.add('active');
+  }
+}
+window.addEventListener('scroll', updateActive, {passive:true});
+updateActive();
+</script>
+
+</body>
+</html>
